@@ -6,7 +6,8 @@ export interface Profile {
   email: string;
 }
 
-export interface ServiceRequired {
+export interface Proffer {
+  client: Profile,
   startDate: Date;
   endDate: Date;
   skills: Skill[];

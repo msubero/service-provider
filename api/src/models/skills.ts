@@ -1,5 +1,4 @@
 export type Scale = number;
-
 export interface Level {
   range: Scale[];
   name:
@@ -9,7 +8,6 @@ export interface Level {
     | "proficient"
     | "expert";
 }
-
 export interface Skill {
   name: string;
   level: Level;
