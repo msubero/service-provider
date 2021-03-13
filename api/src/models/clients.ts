@@ -1,14 +1,14 @@
 import { Skill } from "./skills";
 
-export interface Info {
+export interface Profile {
   name: string;
   location: string;
   email: string;
 }
 
-export interface Request {
-  skills: Skill[];
+export interface ServiceRequired {
   startDate: Date;
   endDate: Date;
+  skills: Skill[];
   description: string;
 }

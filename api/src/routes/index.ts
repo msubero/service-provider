@@ -1,14 +1,13 @@
 import { Router } from "express";
 import clients from "./clients";
-import providers from "./providers";
+import tasks from "./tasks";
 
 const router = Router();
 
-router.use(
-  "/api",
+router.use("/api", 
   router
   .use("/clients", clients)
-  .use("/providers", providers)
+  .use('/tasks', tasks)
 );
 
 export default router;
