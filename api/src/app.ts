@@ -13,6 +13,8 @@ app.use(routes);
 
 (async () => {
   await storage.init();
-  await storage.setItem("applications", []);
+  await storage.setItem("acceptedServices", []);
   app.listen(port, () => console.info(`server started on port ${port}`));
 })();
+
+export default app;

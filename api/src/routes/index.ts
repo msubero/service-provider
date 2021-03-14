@@ -1,13 +1,13 @@
 import { Router } from "express";
 import clients from "./clients";
-import requests from "./requests";
+import services from "./services";
 
 const router = Router();
 
 router.use("/api", 
   router
   .use("/clients", clients)
-  .use('/requests', requests)
+  .use('/services', services)
 );
 
 export default router;

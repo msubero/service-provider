@@ -1,4 +1,4 @@
-import { Skill } from "./skills";
+import { Skill } from "./skill";
 
 export interface Profile {
   name: string;

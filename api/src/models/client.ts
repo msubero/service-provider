@@ -1,4 +1,4 @@
-import { Skill } from "./skills";
+import { Skill } from "./skill";
 
 export interface Profile {
   name: string;
@@ -6,7 +6,7 @@ export interface Profile {
   email: string;
 }
 
-export interface Proffer {
+export interface Request {
   client: Profile,
   startDate: Date;
   endDate: Date;
