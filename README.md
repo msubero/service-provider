@@ -6,6 +6,14 @@ Node.js and React.js service provider app.
 
 **My service corner app** is a place where a service provider can apply to client requests related to the provider's skills.
 
+## Prerequisite
+
+This project uses `yarn`, so you need to install it first if you don't have it.
+
+```bash
+npm install --global yarn
+```
+
 ## Getting Started
 
 1. Start the server on `api` folder:
