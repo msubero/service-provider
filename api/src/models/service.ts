@@ -17,7 +17,7 @@ const filePath = path.join(rootDir, "data", "acceptedServices.json");
 const getAcceptedServices = (callback) => {
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
-      callback('');
+      callback([]);
     } else {
       callback(JSON.parse(data) || data);
     }

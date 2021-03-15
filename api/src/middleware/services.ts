@@ -9,7 +9,7 @@ import { providerProfileSchema } from "../models/provider";
 
 export const datesConflictErrorHandler = (req, res, next) => {
   Service.fetchAll((acceptedServices: AcceptedService[]) => {
-    const conflictingDates = acceptedServices.some(({ request }) => {
+    const conflictingDates =(acceptedServices || []).some(({ request }) => {
       return isEqual(
         parseJSON(request.startDate),
         parseJSON(req.body.request.startDate)

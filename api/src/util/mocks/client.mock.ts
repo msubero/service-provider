@@ -25,6 +25,7 @@ export const casualClientRequest = (
     casual.integer(1, 30)
   );
   const skills: Skill[] = times(() => casualSkill(providerSkills), 4)
+  const client = casualClient()
   return {
     startDate,
     endDate: addDays(startDate, casual.integer(1, 30)),
