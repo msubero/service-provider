@@ -12,9 +12,13 @@ export interface AcceptedService {
   provider: ProviderProfile;
 }
 
-const filePath = path.join(rootDir, "../data", "acceptedServices.json");
+const dir = path.join(rootDir, "data");
+const filePath = path.join(dir, "acceptedServices.json");
 
-const getAcceptedServices = (callback) => {
+const getAcceptedServices = async (callback) => {
+  if (!fs.existsSync(dir)) {
+    await fs.mkdirSync(dir);
+  }
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       callback([]);

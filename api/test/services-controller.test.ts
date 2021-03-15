@@ -11,11 +11,16 @@ import {
 } from "../src/util/mocks/services.mock";
 import { providerProfile } from "../src/util/mocks/provider.mock";
 
-const filePath = path.join(rootDir, "../data", "acceptedServices.json");
+const dir = path.join(rootDir, "data");
+const filePath = path.join(dir, "acceptedServices.json");
+
 const acceptedServices = times(casualAcceptedService, 2);
 const service = acceptedService;
 
-beforeAll(() => {
+beforeAll(async () => {
+  if (!fs.existsSync(dir)) {
+    await fs.mkdirSync(dir);
+  }
   fs.writeFile(filePath, JSON.stringify(acceptedServices), () => {});
 });
 
