@@ -2,10 +2,10 @@
   "name": "service-provider",
   "version": "1.0.0",
   "description": "",
-  "main": "dist",
+  "main": "dist/api/src",
   "scripts": {
     "build": "tsc",
-    "start": "npm ci && npm run build && node dist",
+    "start": "npm ci && npm run build && node dist/api/src",
     "test": "jest --config ./jest.config.json",
     "test:cov": "npm run test -- --coverage",
     "dev": "npm ci && nodemon src -x ts-node -w src -e ts"
