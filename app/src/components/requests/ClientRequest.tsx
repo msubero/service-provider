@@ -60,7 +60,6 @@ export class ClientRequest extends Component {
         });
       })
       .catch((err) => {
-        console.log(err.response);
         if (err.response.status) {
           this.setState({
             conflictingDates: err.response.status === 409,
