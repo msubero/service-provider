@@ -1,8 +1,10 @@
-import * as casual from "casual";
+import casual from "casual";
 import times from "lodash/fp/times";
+import uniqBy from "lodash/fp/uniqBy";
 import addDays from "date-fns/addDays";
-import { Request as ClientRequest } from "../../src/models/client";
-import { skill } from "./skill.mock";
+import { Request as ClientRequest } from "../../models/client";
+import { casualSkill } from "./skill.mock";
+import { Skill } from "../../models/skill";
 
 export const casualClient = () => ({
   name: casual.company_name,
@@ -14,18 +16,21 @@ casual.define("client", casualClient);
 
 export const client = casual["client"];
 
-export const casualClientRequest = (): ClientRequest => {
+export const casualClientRequest = (
+  providerSkills: Skill[] = []
+): ClientRequest => {
   const startDate = new Date(
     casual.integer(2019, 2021),
     casual.integer(0, 11),
     casual.integer(1, 30)
   );
+  const skills: Skill[] = times(() => casualSkill(providerSkills), 4)
   return {
     startDate,
     endDate: addDays(startDate, casual.integer(1, 30)),
     description: casual.text,
     client,
-    skills: times(skill, 2),
+    skills: uniqBy("name", skills)
   };
 };
 

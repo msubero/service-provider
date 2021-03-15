@@ -1,11 +1,11 @@
-import * as casual from "casual";
-import { AcceptedService } from "../../src/models/service";
+import casual from "casual";
+import { AcceptedService } from "../../models/service";
 import { clientRequest } from "./client.mock";
-import { provider } from "./provider.mock";
+import { providerProfile } from "./provider.mock";
 
 export const casualAcceptedService = (): AcceptedService => ({
   request: clientRequest,
-  provider,
+  provider: providerProfile,
 });
 
 casual.define("acceptedService", casualAcceptedService);

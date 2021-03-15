@@ -2,24 +2,27 @@
   "name": "service-provider",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/app.js",
+  "main": "dist",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/app.js",
-    "test": "jest --config ./jestconfig.json",
-    "dev": "nodemon src/** --exec ts-node src/app.ts"
+    "start": "node dist",
+    "test": "jest --config ./jest.config.json",
+    "test:cov": "npm run test -- --coverage",
+    "dev": "nodemon src/** --exec ts-node src"
   },
   "author": "mariasuberop@gmail.com",
   "license": "ISC",
   "dependencies": {
     "date-fns": "^2.19.0",
     "express": "^4.17.1",
+    "joi": "^17.4.0",
     "lodash": "^4.17.21",
     "node-persist": "^3.1.0"
   },
   "devDependencies": {
     "@types/express": "^4.17.11",
     "@types/jest": "^26.0.20",
+    "@types/lodash": "^4.14.168",
     "@types/node": "^14.14.34",
     "@types/supertest": "^2.0.10",
     "casual": "^1.6.2",
