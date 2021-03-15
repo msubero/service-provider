@@ -11,7 +11,7 @@ import {
 } from "../src/util/mocks/services.mock";
 import { providerProfile } from "../src/util/mocks/provider.mock";
 
-const filePath = path.join(rootDir, "data", "acceptedServices.json");
+const filePath = path.join(rootDir, "../data", "acceptedServices.json");
 const acceptedServices = times(casualAcceptedService, 2);
 const service = acceptedService;
 

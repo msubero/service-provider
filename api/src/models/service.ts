@@ -12,7 +12,7 @@ export interface AcceptedService {
   provider: ProviderProfile;
 }
 
-const filePath = path.join(rootDir, "data", "acceptedServices.json");
+const filePath = path.join(rootDir, "../data", "acceptedServices.json");
 
 const getAcceptedServices = (callback) => {
   fs.readFile(filePath, "utf8", (err, data) => {
