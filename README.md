@@ -1,4 +1,4 @@
-# Service Provider App
+# My Service Corner App
 
 Node.js and React.js service provider app.
 
